@@ -21,7 +21,9 @@ trait FirestoreConnectionTrait
     {
         $firestore = new FirestoreClient([
             'projectId' => config('firebase.projects.app.project_id', env('FIREBASE_PROJECT_ID')),
-            'keyFilePath' => base_path().'/'.env('GOOGLE_APPLICATION_CREDENTIALS'),
+            'keyFilePath' => isset(env('GOOGLE_APPLICATION_CREDENTIALS'))
+                ? base_path() . '/' . env('GOOGLE_APPLICATION_CREDENTIALS')
+                : null,
         ]);
 
         return $firestore->collection($collection);
