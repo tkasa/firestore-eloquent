@@ -15,7 +15,7 @@ trait FirestoreConnectionTrait
      * Returns a Firestore collection instance for the given collection name.
      *
      * @param string $collection The name of the Firestore collection.
-     * @return Google\Cloud\Firestore\CollectionReference The Firestore collection instance.
+     * @return \Google\Cloud\Firestore\CollectionReference The Firestore collection instance.
      */
     protected function fConnection($collection)
     {
